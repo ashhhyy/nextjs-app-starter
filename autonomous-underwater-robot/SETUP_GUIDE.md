@@ -12,16 +12,27 @@
    - SDA -> GPIO 2 (SDA)
 
    L298N Motor Drivers:
-   Forward/Backward Motors:
-   - IN1 -> GPIO 17
-   - IN2 -> GPIO 18
-   - ENA -> GPIO 27
+
+   L298N #1 (Forward/Backward Motors):
+   Left Motor:
+   - IN1 -> GPIO 17 (Forward)
+   - IN2 -> GPIO 18 (Backward)
+   - ENA -> GPIO 27 (Speed Control)
+   Right Motor:
+   - IN3 -> GPIO 22 (Forward)
+   - IN4 -> GPIO 23 (Backward)
+   - ENB -> GPIO 24 (Speed Control)
    - Motor power -> 12V from battery via buck converter
    
-   Up/Down Motors:
-   - IN3 -> GPIO 22
-   - IN4 -> GPIO 23
-   - ENB -> GPIO 24
+   L298N #2 (Up/Down Motors):
+   Front Motor:
+   - IN1 -> GPIO 5 (Up)
+   - IN2 -> GPIO 6 (Down)
+   - ENA -> GPIO 12 (Speed Control)
+   Back Motor:
+   - IN3 -> GPIO 13 (Up)
+   - IN4 -> GPIO 19 (Down)
+   - ENB -> GPIO 16 (Speed Control)
    - Motor power -> 12V from battery via buck converter
 
    Ultrasonic Sensors:
