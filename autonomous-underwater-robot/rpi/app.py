@@ -32,8 +32,8 @@ try:
     # Initialize hardware components
     motor_control = MotorControl()
     mpu6050 = MPU6050()
-    front_sensor = UltrasonicSensor(trigger_pin=5, echo_pin=6)
-    back_sensor = UltrasonicSensor(trigger_pin=13, echo_pin=19)
+    front_sensor = UltrasonicSensor(trigger_pin=5, echo_pin=25)
+    back_sensor = UltrasonicSensor(trigger_pin=7, echo_pin=8)
     bottom_sensor = UltrasonicSensor(trigger_pin=20, echo_pin=21)
     
     autonomous_logic = AutonomousLogic(motor_control, mpu6050, front_sensor, back_sensor, bottom_sensor)

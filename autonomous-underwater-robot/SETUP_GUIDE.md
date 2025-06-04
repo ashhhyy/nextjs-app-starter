@@ -14,37 +14,27 @@
    L298N Motor Drivers:
 
    L298N #1 (Forward/Backward Motors):
-   Left Motor:
    - IN1 -> GPIO 17 (Forward)
    - IN2 -> GPIO 18 (Backward)
    - ENA -> GPIO 27 (Speed Control)
-   Right Motor:
-   - IN3 -> GPIO 22 (Forward)
-   - IN4 -> GPIO 23 (Backward)
-   - ENB -> GPIO 24 (Speed Control)
    - Motor power -> 12V from battery via buck converter
-   
+
    L298N #2 (Up/Down Motors):
-   Front Motor:
-   - IN1 -> GPIO 5 (Up)
-   - IN2 -> GPIO 6 (Down)
-   - ENA -> GPIO 12 (Speed Control)
-   Back Motor:
-   - IN3 -> GPIO 13 (Up)
-   - IN4 -> GPIO 19 (Down)
-   - ENB -> GPIO 16 (Speed Control)
+   - IN1 -> GPIO 22 (Up)
+   - IN2 -> GPIO 23 (Down)
+   - ENA -> GPIO 24 (Speed Control)
    - Motor power -> 12V from battery via buck converter
 
    Ultrasonic Sensors:
    Front Sensor:
    - TRIG -> GPIO 5
-   - ECHO -> GPIO 6
+   - ECHO -> GPIO 25
    - VCC -> 5V
    - GND -> GND
 
    Back Sensor:
-   - TRIG -> GPIO 13
-   - ECHO -> GPIO 19
+   - TRIG -> GPIO 7
+   - ECHO -> GPIO 8
    - VCC -> 5V
    - GND -> GND
 
