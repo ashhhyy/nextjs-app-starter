@@ -14,16 +14,33 @@
    L298N Motor Drivers:
 
    L298N #1 (Forward/Backward Motors):
+   Motor A (Left):
    - IN1 -> GPIO 17 (Forward)
    - IN2 -> GPIO 18 (Backward)
    - ENA -> GPIO 27 (Speed Control)
+   Motor B (Right):
+   - IN3 -> GPIO 16 (Forward)
+   - IN4 -> GPIO 19 (Backward)
+   - ENB -> GPIO 26 (Speed Control)
    - Motor power -> 12V from battery via buck converter
 
    L298N #2 (Up/Down Motors):
+   Motor A (Front):
    - IN1 -> GPIO 22 (Up)
    - IN2 -> GPIO 23 (Down)
    - ENA -> GPIO 24 (Speed Control)
+   Motor B (Back):
+   - IN3 -> GPIO 12 (Up)
+   - IN4 -> GPIO 13 (Down)
+   - ENB -> GPIO 6 (Speed Control)
    - Motor power -> 12V from battery via buck converter
+
+   Note: Each L298N motor driver can control two DC motors independently:
+   - IN1/IN2 and ENA control Motor A
+   - IN3/IN4 and ENB control Motor B
+   This setup allows for:
+   - Independent left/right motor control for turning
+   - Independent front/back vertical motor control for pitch adjustment
 
    Ultrasonic Sensors:
    Front Sensor:
@@ -136,8 +153,21 @@
    # In Python shell
    from motor_control import MotorControl
    mc = MotorControl()
-   mc.forward(50)  # Should move forward at 50% speed
-   mc.stop()
+   
+   # Test basic movement
+   mc.forward(50)     # Move forward at 50% speed
+   mc.backward(30)    # Move backward at 30% speed
+   mc.turn_left(40)   # Turn left at 40% speed
+   mc.turn_right(40)  # Turn right at 40% speed
+   
+   # Test vertical movement
+   mc.up(60)          # Move up at 60% speed
+   mc.down(60)        # Move down at 60% speed
+   mc.pitch_up(30)    # Pitch nose up at 30% speed
+   mc.pitch_down(30)  # Pitch nose down at 30% speed
+   
+   mc.stop()          # Stop all motors
+   mc.cleanup()       # Clean up GPIO when done
    ```
 
 2. Test sensors:
