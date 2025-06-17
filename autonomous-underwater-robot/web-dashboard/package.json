@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Web dashboard for controlling the autonomous underwater robot",
   "main": "src/App.tsx",
+  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -15,7 +16,8 @@
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0"
+    "@types/react-dom": "^18.2.0",
+    "lucide-react": "^0.395.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.0",
