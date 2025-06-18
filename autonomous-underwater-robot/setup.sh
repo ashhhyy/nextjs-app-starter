@@ -34,6 +34,10 @@ sudo apt update && sudo apt upgrade -y
 echo "Installing git, nodejs, npm, python3-venv, python3-pip, python3-smbus..."
 sudo apt install git nodejs npm python3-venv python3-pip python3-smbus -y
 
+# Install Yarn globally
+echo "Installing Yarn globally..."
+sudo npm install -g yarn
+
 # --- 2. Python Backend (Flask API) Environment Setup ---
 echo ""
 echo "--- 2. Setting up Python environment for Flask API ---"
@@ -79,7 +83,7 @@ fi
 
 # --- 4. Web Dashboard (Frontend) Dependencies Installation ---
 echo ""
-echo "--- 4. Installing web dashboard dependencies (npm install) ---"
+echo "--- 4. Installing web dashboard dependencies (yarn install) ---"
 echo "This may take several minutes. Ensure your web-dashboard files (src/, public/, package.json, etc.) are already in place."
 WEB_DASHBOARD_DIR="web-dashboard"
 
@@ -89,8 +93,9 @@ if [ ! -d "$WEB_DASHBOARD_DIR" ]; then
     exit 1
 fi
 
+# We will use yarn for installation
 cd "$WEB_DASHBOARD_DIR"
-npm install
+yarn install # Use yarn instead of npm
 cd .. # Go back to project root
 
 # --- 5. Configure Permissions for Hardware Access ---
@@ -172,7 +177,7 @@ echo ""
 echo "4. To run the Web Dashboard (frontend):"
 echo "   Open a NEW SSH session to your Pi."
 echo "   cd $PYTHON_APP_DIR/$WEB_DASHBOARD_DIR"
-echo "   npm start"
+echo "   yarn start" # Changed from npm start to yarn start
 echo "   (Keep this terminal session open or use 'screen'/'tmux')"
 echo ""
 echo "5. Access the Web Dashboard from your computer's browser:"
